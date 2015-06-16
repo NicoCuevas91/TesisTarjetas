@@ -1,54 +1,86 @@
 package domainapp.dom.tarjeta;
 
+import java.util.Date;
 
-import javax.inject.Inject;
-import javax.jdo.annotations.IdentityType;
-import org.apache.isis.applib.DomainObjectContainer;
 import org.apache.isis.applib.annotation.MemberOrder;
 import org.apache.isis.applib.annotation.Title;
 
-
-
-@javax.jdo.annotations.PersistenceCapable(identityType=IdentityType.DATASTORE)
-public class Tarjeta {
-
+public abstract class Tarjeta 
+{
+	private int id;
+	private int numTarjetaTesco;
+	private Date fechaReporte;
+	private Date fechaCarga;
+	private String lugarObs;
+	private String lineaNegocio;
 	
-	// {{ Nombre (property)
-	private String nombre;
-
-	@MemberOrder(sequence = "1")
-	@javax.jdo.annotations.Column(allowsNull="false", length = 40)
-    @Title(sequence="1")
-	public String getNombre() {
-		return nombre;
+	@MemberOrder (sequence = "1")
+	@javax.jdo.annotations.Column(allowsNull = "false",length = 40)
+	@Title(sequence = "1")
+	public int getId() 
+	{
+		return id;
 	}
-
-	public void setNombre(final String nombre) {
-		this.nombre = nombre;
+	public void setId(int id) 
+	{
+		this.id = id;
 	}
-	// }}
 	
-	// {{ Talle (property)
-	private String talle;
-
-	@MemberOrder(sequence = "2")
-	@javax.jdo.annotations.Column(allowsNull="false", length = 40)
-    @Title(sequence="2")
-	public String getTalle() {
-		return talle;
+	@MemberOrder (sequence = "2")
+	@javax.jdo.annotations.Column(allowsNull = "false",length = 40)
+	@Title(sequence = "2")
+	public int getNumTarjetaTesco() 
+	{
+		return numTarjetaTesco;
 	}
-
-	public void setTalle(final String talle) {
-		this.talle = talle;
+	public void setNumTarjetaTesco(int numTarjetaTesco) 
+	{
+		this.numTarjetaTesco = numTarjetaTesco;
 	}
-	// }}
-
-	// }}
-
-
-
-@Inject
-private ServicioTarjetas servicioRopa;
-@Inject
-private DomainObjectContainer container;
+	@MemberOrder (sequence = "3")
+	@javax.jdo.annotations.Column(allowsNull = "false",length = 40)
+	@Title(sequence = "3")
+	public Date getFechaReporte() 
+	{
+		return fechaReporte;
+	}
+	public void setFechaReporte(Date fechaReporte) 
+	{
+		this.fechaReporte = fechaReporte;
+	}
+	@MemberOrder (sequence = "4")
+	@javax.jdo.annotations.Column(allowsNull = "false",length = 40)
+	@Title(sequence = "4")
+	public Date getFechaCarga() 
+	{
+		return fechaCarga;
+	}
+	public void setFechaCarga(Date fechaCarga) 
+	{
+		this.fechaCarga = fechaCarga;
+	}
+	@MemberOrder (sequence = "5")
+	@javax.jdo.annotations.Column(allowsNull = "false",length = 40)
+	@Title(sequence = "5")
+	public String getLugarObs() 
+	{
+		return lugarObs;
+	}
+	public void setLugarObs(String lugarObs) 
+	{
+		this.lugarObs = lugarObs;
+	}
+	@MemberOrder (sequence = "6")
+	@javax.jdo.annotations.Column(allowsNull = "false",length = 40)
+	@Title(sequence = "6")
+	public String getLineaNegocio() 
+	{
+		return lineaNegocio;
+	}
+	public void setLineaNegocio(String lineaNegocio) 
+	{
+		this.lineaNegocio = lineaNegocio;
+	}
+	
+		
 }
