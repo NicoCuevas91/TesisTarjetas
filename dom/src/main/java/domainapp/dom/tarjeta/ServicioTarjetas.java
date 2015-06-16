@@ -7,7 +7,6 @@ import org.apache.isis.applib.annotation.DomainServiceLayout;
 import org.apache.isis.applib.annotation.Optionality;
 import org.apache.isis.applib.annotation.Parameter;
 import org.apache.isis.applib.annotation.ParameterLayout;
-import domainapp.dom.modulo.categoria.Category;
 
 
 
@@ -32,9 +31,7 @@ public class ServicioTarjetas extends AbstractFactoryAndRepository
 	}
 	public Tarjeta listarTarjetasCargadas(@ParameterLayout (named="Nombre") final String nombre,
 			   @ParameterLayout (named="talle") final String talle,
-			   @ParameterLayout(named="Description") final String description,
-			   @Parameter(optionality = Optionality.OPTIONAL)
-			   @ParameterLayout(named="Category")final Category category){
+			   @ParameterLayout(named="Description") final String description){
 		return null;
 	}
 	

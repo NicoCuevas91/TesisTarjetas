@@ -6,7 +6,7 @@ import javax.jdo.annotations.IdentityType;
 import org.apache.isis.applib.DomainObjectContainer;
 import org.apache.isis.applib.annotation.MemberOrder;
 import org.apache.isis.applib.annotation.Title;
-import domainapp.dom.modulo.categoria.Category;
+
 
 
 @javax.jdo.annotations.PersistenceCapable(identityType=IdentityType.DATASTORE)
@@ -42,20 +42,7 @@ public class Tarjeta {
 		this.talle = talle;
 	}
 	// }}
-	
-	// {{ Category (property)
-	private Category category;
 
-	@MemberOrder(sequence = "3")
-	@javax.jdo.annotations.Column(allowsNull="false", length = 40)
-    @Title(sequence="2")
-	public Category getCategory() {
-		return category;
-	}
-
-	public void setCategory(final Category category) {
-		this.category = category;
-	}
 	// }}
 
 
