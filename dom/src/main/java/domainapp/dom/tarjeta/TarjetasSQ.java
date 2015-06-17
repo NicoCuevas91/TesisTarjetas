@@ -11,13 +11,13 @@ import org.apache.isis.applib.annotation.ParameterLayout;
 
 
 @DomainServiceLayout(menuOrder = "30")
-@DomainService(repositoryFor = Tarjeta.class)
+@DomainService(repositoryFor = TarjetaSQ.class)
 public class TarjetasSQ extends AbstractFactoryAndRepository 
 {
 	@javax.inject.Inject 
     DomainObjectContainer container;
 	
-	public Tarjeta Cargar(@ParameterLayout (named="Numero de tarjeta") final int numTar,
+	public TarjetaSQ Cargar(@ParameterLayout (named="Numero de tarjeta") final int numTar,
 						@ParameterLayout (named="Fecha Reporte") final Date fechaRepo,
 						@ParameterLayout(named="Fecha Carga") final Date fechaCarga,
 						@ParameterLayout(named="Lugar de Observacion") final String lugarObs,
@@ -25,11 +25,11 @@ public class TarjetasSQ extends AbstractFactoryAndRepository
 						@ParameterLayout(named="lo que sea") final String loquesea) 
 	{
 		final TarjetaSQ tSQ = container.newTransientInstance(TarjetaSQ.class);
-        tSQ.setNumTarjetaTesco(numTar);
-        tSQ.setFechaReporte(fechaRepo);
-        tSQ.setFechaCarga(fechaCarga);
-        tSQ.setLugarObs(lugarObs);
-        tSQ.setLineaNegocio(lineaNeg);
+		tSQ.setNumTarjetaTesco(String.valueOf(numTar));
+		tSQ.setFechaReporte(fechaRepo.toString());
+		tSQ.setFechaCarga(fechaCarga.toString());
+		tSQ.setLugarObs(lugarObs);
+		tSQ.setLineaNegocio(lineaNeg);
         tSQ.setLoquesea(loquesea);
         container.persistIfNotAlready(tSQ);
 		
@@ -37,12 +37,12 @@ public class TarjetasSQ extends AbstractFactoryAndRepository
 		
 	}
 	
-	public Tarjeta Modificar()
+	public TarjetaSQ Modificar()
 	{
 		return null;
 	}
 	
-	public Tarjeta Eliminar()
+	public TarjetaSQ Eliminar()
 	{
 		return null;
 	}

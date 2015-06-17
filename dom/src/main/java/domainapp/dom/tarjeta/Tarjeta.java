@@ -1,67 +1,57 @@
 package domainapp.dom.tarjeta;
 
-import java.util.Date;
+import javax.jdo.annotations.Column;
+import javax.jdo.annotations.Inheritance;
+import javax.jdo.annotations.InheritanceStrategy;
+import javax.jdo.annotations.PersistenceCapable;
 
 import org.apache.isis.applib.annotation.MemberOrder;
-import org.apache.isis.applib.annotation.Title;
 
+
+@PersistenceCapable
+@Inheritance(strategy = InheritanceStrategy.SUBCLASS_TABLE)
 public abstract class Tarjeta 
 {
-	private int id;
-	private int numTarjetaTesco;
-	private Date fechaReporte;
-	private Date fechaCarga;
+	private String numTarjetaTesco;
+	private String fechaReporte;
+	private String fechaCarga;
 	private String lugarObs;
 	private String lineaNegocio;
 	
 	@MemberOrder (sequence = "1")
-	@javax.jdo.annotations.Column(allowsNull = "false",length = 40)
-	@Title(sequence = "1")
-	public int getId() 
-	{
-		return id;
-	}
-	public void setId(int id) 
-	{
-		this.id = id;
-	}
-	
-	@MemberOrder (sequence = "2")
-	@javax.jdo.annotations.Column(allowsNull = "false",length = 40)
-	@Title(sequence = "2")
-	public int getNumTarjetaTesco() 
+	@Column(allowsNull = "false",length = 40)
+	public String getNumTarjetaTesco() 
 	{
 		return numTarjetaTesco;
 	}
-	public void setNumTarjetaTesco(int numTarjetaTesco) 
+	public void setNumTarjetaTesco(String numTarjetaTesco) 
 	{
 		this.numTarjetaTesco = numTarjetaTesco;
 	}
-	@MemberOrder (sequence = "3")
-	@javax.jdo.annotations.Column(allowsNull = "false",length = 40)
-	@Title(sequence = "3")
-	public Date getFechaReporte() 
+	
+	@MemberOrder (sequence = "2")
+	@Column(allowsNull = "false",length = 40)
+	public String getFechaReporte() 
 	{
 		return fechaReporte;
 	}
-	public void setFechaReporte(Date fechaReporte) 
+	public void setFechaReporte(String fechaReporte) 
 	{
 		this.fechaReporte = fechaReporte;
 	}
-	@MemberOrder (sequence = "4")
-	@javax.jdo.annotations.Column(allowsNull = "false",length = 40)
-	@Title(sequence = "4")
-	public Date getFechaCarga() 
+	@MemberOrder (sequence = "3")
+	@Column(allowsNull = "false",length = 40)
+	public String getFechaCarga() 
 	{
 		return fechaCarga;
 	}
-	public void setFechaCarga(Date fechaCarga) 
+	public void setFechaCarga(String fechaCarga) 
 	{
 		this.fechaCarga = fechaCarga;
 	}
-	@MemberOrder (sequence = "5")
-	@javax.jdo.annotations.Column(allowsNull = "false",length = 40)
-	@Title(sequence = "5")
+
+	@MemberOrder (sequence = "4")
+	@Column(allowsNull = "false",length = 40)
 	public String getLugarObs() 
 	{
 		return lugarObs;
@@ -70,9 +60,8 @@ public abstract class Tarjeta
 	{
 		this.lugarObs = lugarObs;
 	}
-	@MemberOrder (sequence = "6")
-	@javax.jdo.annotations.Column(allowsNull = "false",length = 40)
-	@Title(sequence = "6")
+	@MemberOrder (sequence = "5")
+	@Column(allowsNull = "false",length = 40)//pera, la bd donde la tenes
 	public String getLineaNegocio() 
 	{
 		return lineaNegocio;

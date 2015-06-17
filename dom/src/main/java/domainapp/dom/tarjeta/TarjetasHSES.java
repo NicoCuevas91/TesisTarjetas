@@ -23,9 +23,9 @@ public class TarjetasHSES extends AbstractFactoryAndRepository
 	   						@ParameterLayout(named="Accion Realizada") final String accRealizada) 
 	{
 		final TarjetaHSES tHSES = container.newTransientInstance(TarjetaHSES.class);
-		tHSES.setNumTarjetaTesco(numTar);
-		tHSES.setFechaReporte(fechaRepo);
-		tHSES.setFechaCarga(fechaCarga);
+		tHSES.setNumTarjetaTesco(String.valueOf(numTar));
+		tHSES.setFechaReporte(fechaRepo.toString());
+		tHSES.setFechaCarga(fechaCarga.toString());
 		tHSES.setLugarObs(lugarObs);
 		tHSES.setLineaNegocio(lineaNeg);
 		tHSES.setAccionRealizada(accRealizada);
