@@ -6,8 +6,6 @@ import org.apache.isis.applib.AbstractFactoryAndRepository;
 import org.apache.isis.applib.DomainObjectContainer;
 import org.apache.isis.applib.annotation.DomainService;
 import org.apache.isis.applib.annotation.DomainServiceLayout;
-import org.apache.isis.applib.annotation.Optionality;
-import org.apache.isis.applib.annotation.Parameter;
 import org.apache.isis.applib.annotation.ParameterLayout;
 
 
@@ -19,12 +17,12 @@ public class TarjetasSQ extends AbstractFactoryAndRepository
 	@javax.inject.Inject 
     DomainObjectContainer container;
 	
-	public Tarjeta cargarUnaTarjeta(@ParameterLayout (named="Numero de tarjeta") final int numTar,
-							   @ParameterLayout (named="Fecha Reporte") final Date fechaRepo,
-							   @ParameterLayout(named="Fecha Carga") final Date fechaCarga,
-							   @ParameterLayout(named="Lugar de Observacion") final String lugarObs,
-							   @ParameterLayout(named="Linea de Negocio") final String lineaNeg,
-							   @ParameterLayout(named="lo que sea") final String loquesea) 
+	public Tarjeta Cargar(@ParameterLayout (named="Numero de tarjeta") final int numTar,
+						@ParameterLayout (named="Fecha Reporte") final Date fechaRepo,
+						@ParameterLayout(named="Fecha Carga") final Date fechaCarga,
+						@ParameterLayout(named="Lugar de Observacion") final String lugarObs,
+						@ParameterLayout(named="Linea de Negocio") final String lineaNeg,
+						@ParameterLayout(named="lo que sea") final String loquesea) 
 	{
 		final TarjetaSQ tSQ = container.newTransientInstance(TarjetaSQ.class);
         tSQ.setNumTarjetaTesco(numTar);
@@ -38,7 +36,14 @@ public class TarjetasSQ extends AbstractFactoryAndRepository
 		return tSQ;
 		
 	}
-	public Tarjeta listarTarjetasCargadas(){
+	
+	public Tarjeta Modificar()
+	{
+		return null;
+	}
+	
+	public Tarjeta Eliminar()
+	{
 		return null;
 	}
 	
